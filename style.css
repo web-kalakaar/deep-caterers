@@ -543,8 +543,11 @@ nav a.on::after {
   width: 88%;
   aspect-ratio: 4/5;
   border-radius: var(--r);
+    z-index: -10;
+    position: relative;
 }
 .owner {
+
   position: absolute;
   right: 0;
   bottom: 0;
@@ -557,8 +560,8 @@ nav a.on::after {
   box-shadow: 0 14px 40px rgba(36, 27, 23, 0.18);
 }
 .owner img {
-  width: 84px;
-  height: 84px;
+  width: 160px;
+  height: 160px;
   border-radius: 50%;
   border: 2px solid var(--gold);
 }
@@ -601,13 +604,28 @@ blockquote {
   background: var(--espresso);
   overflow: hidden;
   --fade: #241b17;
+  position: relative;
 }
+
 .services-bg {
   position: absolute;
   inset: 0;
   background-size: cover;
   background-position: center;
   opacity: 0.28;
+}
+
+.services-bg::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.95) 0%,
+    rgba(0, 0, 0, 0.65) 25%,
+    rgba(0, 0, 0, 0.25) 55%,
+    transparent 100%
+  );
 }
 .services .head,
 .svc-grid,
@@ -1110,6 +1128,13 @@ footer {
   color: var(--ivory);
   padding: 60px 5% 20px;
   font-size: 0.9rem;
+}
+footer .logo-ft {
+  position: relative;
+  top: auto;
+  right: auto;
+  width: 108px;
+  height: 108px;
 }
 .foot {
   display: grid;
